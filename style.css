@@ -1,0 +1,131 @@
+:root {
+    --eye-height: 120px; /* Ojos mucho más grandes */
+    --eye-radius: 50%;
+    --eye-rotate-left: 0deg;
+    --eye-rotate-right: 0deg;
+    --eyebrow-transform: translateY(0px);
+    --mouth-width: 80px;
+    --mouth-height: 15px;
+    --mouth-radius: 10px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #080a0c;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 20px;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+/* --- ESCENARIO DEL ROSTRO GIGANTE --- */
+.main-face-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+}
+
+.face {
+    display: flex;
+    gap: 90px;
+}
+
+.eye-container { position: relative; }
+
+.eyebrow {
+    width: 130px;
+    height: 12px;
+    background-color: #00ffcc;
+    position: absolute;
+    top: -25px;
+    left: -5px;
+    border-radius: 6px;
+    box-shadow: 0 0 15px #00ffcc;
+    transition: transform 0.4s ease-in-out;
+    transform: var(--eyebrow-transform);
+}
+
+.eye {
+    width: 120px;
+    height: var(--eye-height);
+    background-color: #00ffcc;
+    border-radius: var(--eye-radius);
+    box-shadow: 0 0 35px rgba(0, 255, 204, 0.6), inset 0 0 10px rgba(0,0,0,0.5);
+    transition: border-radius 0.4s ease-in-out, height 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+
+.left { transform: rotate(var(--eye-rotate-left)); }
+.right { transform: rotate(var(--eye-rotate-right)); }
+
+/* BOCA DE ENERGÍA NEÓN */
+.mouth {
+    width: var(--mouth-width);
+    height: var(--mouth-height);
+    background-color: #00ffcc;
+    border-radius: var(--mouth-radius);
+    box-shadow: 0 0 25px rgba(0, 255, 204, 0.8);
+    transition: width 0.1s ease, height 0.1s ease, border-radius 0.2s ease;
+}
+
+#status-voz {
+    font-size: 0.9rem;
+    color: #4f6b75;
+    letter-spacing: 1px;
+}
+
+/* --- PANEL DE CHAT MINIATURA --- */
+.chat-container {
+    width: 100%;
+    max-width: 400px;
+    height: 180px; /* Compacto */
+    background-color: #11161b;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid #22313a;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 12px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background-color: #080a0c;
+    font-size: 0.85rem;
+}
+
+.message {
+    max-width: 85%;
+    padding: 8px 12px;
+    border-radius: 10px;
+}
+.bot-message { background-color: #1c262f; color: #00ffcc; align-self: flex-start; }
+.user-message { background-color: #007a62; color: #ffffff; align-self: flex-end; }
+
+.chat-input-area { display: flex; padding: 8px; background-color: #11161b; gap: 6px; }
+.chat-input-area input {
+    flex: 1; background-color: #080a0c; border: 1px solid #22313a;
+    padding: 10px; border-radius: 6px; color: #fff; font-size: 0.85rem; outline: none;
+}
+.chat-input-area button {
+    background-color: #00ffcc; color: #080a0c; border: none;
+    padding: 0 14px; border-radius: 6px; font-weight: bold; cursor: pointer;
+}

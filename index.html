@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asistente Autómata Inteligente</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 🤖 ROSTRO GIGANTE CENTRAL -->
+    <div class="main-face-container">
+        <div class="face">
+            <div class="eye-container">
+                <div class="eyebrow" id="brow-left"></div>
+                <div class="eye left" id="eye-left"></div>
+            </div>
+            <div class="eye-container">
+                <div class="eyebrow" id="brow-right"></div>
+                <div class="eye right" id="eye-right"></div>
+            </div>
+        </div>
+        <!-- Nueva Boca Animada -->
+        <div class="mouth" id="robot-mouth"></div>
+        <p id="status-voz">Di "Robot" seguido de una orden o cuenta matemática</p>
+    </div>
+
+    <!-- 💬 PANEL DE CHAT COMPACTO -->
+    <div class="chat-container">
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot-message">Rostro y boca listos. ¡Háblame!</div>
+        </div>
+        <form class="chat-input-area" id="chatForm">
+            <input type="text" id="userInput" placeholder="Escribe o háblame..." autocomplete="off" required>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
